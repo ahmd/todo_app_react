@@ -1,6 +1,6 @@
 import React from 'react';
 import './TodoItemList.css'
-import { getTodoList, deleteTodoItem, editTodoItem } from '../../Redux/todo/todo.action';
+import { getTodoList, deleteTodoItem, editTodoItem,changeOrder } from '../../Redux/todo/todo.action';
 import { connect } from 'react-redux';
 import DragSortableList from 'react-drag-sortable'
 
@@ -27,12 +27,17 @@ class TodoItemList extends React.Component {
         this.props.editTodoItem(item.id, item)
 
     }
+    onSort = (sortedList)=>{
+        console.log(sortedList)
+        const ids=  sortedList.map(i=>(parseInt(i.content.key)));
+        this.props.changeOrder(ids)
+    }
 
     render() {
         const items = this.props.todos.map((item, index) => {
             return {
                 content: (
-                    <div className={'todo ' + item.status} key={index}>
+                    <div className={'todo ' + item.status} key={item.id}>
                         <span className="dragHandeler eva eva-more-vertical-outline"></span>
                         <h2 className="no-drag" onClick={() => this.showDetails(item)}>
                             <i class="eva eva-checkmark-circle-2-outline" />
@@ -57,13 +62,12 @@ class TodoItemList extends React.Component {
                         </button>
 
                     </div>
-                ),
-                classes: []
+                ) 
             }
         })
         return (
             <div className="todo-list">
-                <DragSortableList items={items}> </DragSortableList> 
+                <DragSortableList items={items} type="vertical" onSort={this.onSort} > </DragSortableList> 
             </div>
         )
     }
@@ -79,6 +83,7 @@ export default connect(
     {
         getTodoList,
         deleteTodoItem,
-        editTodoItem
+        editTodoItem,
+        changeOrder
     }
 )(TodoItemList);

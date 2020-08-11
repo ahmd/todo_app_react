@@ -1,5 +1,7 @@
 import axios from 'axios' 
 import { reset } from 'redux-form'; 
+import store from '../store';
+import _ from 'lodash';
 
 
 export const getTodoList = () => async dispatch => {
@@ -36,4 +38,21 @@ export const editTodoItem = (id, formValues) => async dispatch => {
     payload: res.data
   }); 
 };
+
+
+export const changeOrder = (Ids) => async dispatch => { 
+  const state = store.getState();
+  const todos = [];
+
+  Ids.map(id=>(
+       todos.push( _.find(state.todos,{id}))
+  )) 
+ 
+  dispatch({
+    type: 'CHANGE_TODO_ORDER',
+    payload: todos
+  }); 
+};
+
+ 
 
