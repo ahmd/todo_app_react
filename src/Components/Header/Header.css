@@ -1,0 +1,57 @@
+ 
+.logo {
+    margin: 2em 0; 
+}
+.app-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(180deg, #9C27B0, #673AB7);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+.logo i {
+    color: #fff; 
+    font-size: 38px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+nav ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav  a {
+    color: #a7b4cc;
+    text-decoration: none;
+    transition:300ms;
+}
+nav a:hover
+{
+    color: #673AB7; 
+}
+nav a:hover i{
+    color: #673AB7; 
+}
+.github{
+    font-weight: 500;
+}
+.github i {
+    transition: 300ms;
+    margin: 0 5px;
+    color: #a7b4cc;
+    font-size: 22px;
+    vertical-align: middle;
+}

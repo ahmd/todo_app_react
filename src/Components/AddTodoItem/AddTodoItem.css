@@ -1,0 +1,42 @@
+input[type="text"]{
+    width: 100%;
+    border: none;
+    background-color: #edf0f5;
+    color: rgb(39, 40, 43);
+    padding: 1rem;
+    padding-right: 5rem;
+    line-height: 1.5;
+    border-radius: .625rem;
+    font-size: 1.1rem;
+    transition: 300ms;
+}
+input[type="text"]:focus{
+    outline: none;
+    background-color: #f5f8ff;
+    box-shadow: 0px 0px 0px 2px inset #673AB7;
+}
+.newitem-form {
+    position: relative;
+}
+
+.newitem-form button {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    padding: 0;
+    height: 3.6rem;
+    width: 5rem;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.newitem-form button i {
+    color: #a6aebd; 
+    vertical-align: middle;
+    font-size: 28px;
+}
+input[type="text"]:focus + button i{
+    color: #673AB7;
+}

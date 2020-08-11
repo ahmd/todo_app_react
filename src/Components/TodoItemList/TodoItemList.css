@@ -1,0 +1,134 @@
+.todo {
+    border: 1px solid #f0f5ff;
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 0px;
+    position: relative;
+}
+
+.todo.on_progress {
+    border-color: #fdd460;
+}
+
+.todo.on_progress h2 {
+    color: #fdd460;
+}
+.todo.completed {
+    border-color: #74d477;
+}
+.todo.completed h2{
+   color: #74d477;
+}
+
+.todo h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 0;
+    padding: 20px;
+    padding-bottom: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.todo h2 i {
+    vertical-align: middle;
+    font-size: 24px;
+    margin-right: 10px;
+    position: relative;
+    top: -1px;
+}
+p.created_at {
+    color: #a7b4cc;
+    font-size: 0.7rem;
+    position: absolute;
+    left: 20px;
+    bottom: 15px;
+    margin:0;
+    pointer-events: none;
+}
+p.due_date {
+    color: #e43023;
+    font-weight: 500;
+    font-size: 0.7rem;
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    margin:0;
+    pointer-events: none;
+}
+p.due_date i,
+p.created_at i{
+    vertical-align:middle;
+    font-size:1.2em;
+    margin-right:5px;
+    top: -1px;
+    position: relative;
+
+}
+ 
+button.remove-todo {
+    background: #edf0f5;
+    color: #e43023;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 0;
+    transition: 300ms;
+    cursor: pointer;
+    pointer-events: none;
+    outline: none !important;
+}
+
+button.remove-todo i {
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+.todo:hover button.remove-todo {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.draggable.placeholder {
+    opacity: 0.2;
+    background: #eee;
+} 
+.draggable.dragged {
+    width: 100%; 
+}
+
+.draggable.dragged h2 { 
+background:rgba(255,255,255,0.8);
+border-radius:5px;
+}
+
+.todo-list {
+    position: relative;
+}
+.dragHandeler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    color: #a7b4cc;
+    opacity: 0;
+    transition: 300ms;
+    cursor: pointer;
+}
+.todo:hover .dragHandeler{
+    opacity: 1;
+}
