@@ -1,7 +1,7 @@
 import React  from 'react';
 import './AddTodoItem.css'
 import { Field, reduxForm } from 'redux-form' 
-import "react-datepicker/dist/react-datepicker.css";
+ 
 
  class AddTodoItem extends React.Component {
     
