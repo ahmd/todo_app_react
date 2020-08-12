@@ -28,9 +28,8 @@ class TodoItemList extends React.Component {
 
     }
     onSort = (sortedList)=>{
-        console.log(sortedList)
-        const ids=  sortedList.map(i=>(parseInt(i.content.key)));
-        this.props.changeOrder(ids)
+       // const ids=  sortedList.map(i=>(parseInt(i.content.key)));
+       // this.props.changeOrder(ids)
     }
 
     render() {
