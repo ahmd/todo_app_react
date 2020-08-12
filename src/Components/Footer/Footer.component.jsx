@@ -4,7 +4,11 @@ const Footer = () =>{
     return(
         <footer>
             <p className="copy">
-                * Hints: Cycle through the task's status by clicking on the checkbox.
+            Hints:  <br/>
+                *  Cycle through the task's status by clicking on the checkbox.
+                <br/>
+                *  Drag any item from the handel to change its placement.
+
             </p>
         </footer>
     )

@@ -48,17 +48,7 @@ p.created_at {
     margin:0;
     pointer-events: none;
 }
-p.due_date {
-    color: #e43023;
-    font-weight: 500;
-    font-size: 0.7rem;
-    position: absolute;
-    right: 20px;
-    bottom: 15px;
-    margin:0;
-    pointer-events: none;
-}
-p.due_date i,
+ 
 p.created_at i{
     vertical-align:middle;
     font-size:1.2em;

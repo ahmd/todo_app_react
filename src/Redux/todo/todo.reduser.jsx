@@ -11,8 +11,9 @@ const todoReducer = (state = {}, action) => {
 
         case 'ADD_TODO_ITEM':
             return {
-                ...state,
-                [action.payload.id]: action.payload
+                ...state ,
+                [action.payload.id]: action.payload,
+               
             };
 
         case 'DELETE_TODO_ITEM':

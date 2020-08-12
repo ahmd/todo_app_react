@@ -1,7 +1,6 @@
 import React  from 'react';
 import './AddTodoItem.css'
-import { Field, reduxForm } from 'redux-form'
-// import DatePicker from 'react-datepicker'
+import { Field, reduxForm } from 'redux-form' 
 import "react-datepicker/dist/react-datepicker.css";
 
  class AddTodoItem extends React.Component {
@@ -12,20 +11,17 @@ import "react-datepicker/dist/react-datepicker.css";
         );
     };
   
-    render() {
-       
-       
+    render() {  
         return (
             <form className="newitem-form" onSubmit={this.props.handleSubmit(this.onSubmit)}>
-                <Field name="title" component={this.titleField}></Field>
-                <button><i class="eva eva-plus-circle-outline"></i></button>
-                {/* <DatePicker showTimeSelect selected={new Date()} onChange={date => this.setStartDate(date)} /> */}
+                <Field name="title" component={this.titleField} onFocus={this.handleChange}  onBlur={this.handleChange}  ></Field>
+                <button><i class="eva eva-plus-circle-outline"></i></button> 
              </form>
         );
     }
 
-    setStartDate(date){
-console.log(date)
+    handleChange = (event)=>{
+        event.preventDefault()
     }
     onSubmit = (formValues) => {
         if(formValues.title !== undefined){
@@ -47,4 +43,4 @@ console.log(date)
 export default reduxForm({
     form: 'AddTodoItem'
 
-})(AddTodoItem);;
+})(AddTodoItem);

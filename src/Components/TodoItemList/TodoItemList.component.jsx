@@ -35,7 +35,7 @@ class TodoItemList extends React.Component {
 
     render() {
         const items = this.props.todos.map((item, index) => {
-            return {
+            return { 
                 content: (
                     <div className={'todo ' + item.status} key={item.id}>
                         <span className="dragHandeler eva eva-more-vertical-outline"></span>
@@ -46,17 +46,7 @@ class TodoItemList extends React.Component {
                         <p className="created_at">
                             <i className="eva eva-calendar-outline"></i>
                             {item.created_at}
-                        </p>
-
-
-                        {
-                            (item.due_date !== "" && item.due_date !== undefined) &&
-                            <p className="due_date">
-                                <i className="eva eva-clock-outline"></i>
-                    due:  {item.due_date}
-                            </p>
-                        }
-
+                        </p> 
                         <button className="remove-todo" onClick={() => this.props.deleteTodoItem(item.id)}>
                             <i className="eva eva-trash-outline"></i>
                         </button>
@@ -65,6 +55,7 @@ class TodoItemList extends React.Component {
                 ) 
             }
         })
+         
         return (
             <div className="todo-list">
                 <DragSortableList items={items} type="vertical" onSort={this.onSort} > </DragSortableList> 

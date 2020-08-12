@@ -8,8 +8,7 @@ import './TodoApp.css';
 
 class TodoApp extends React.Component {
    
-    onSubmit = event => {
-
+    onSubmit = event => { 
         this.props.addTodoItem(event);
     };
     render() {
@@ -27,8 +26,7 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    {
-         
+    { 
         addTodoItem
     }
 )(TodoApp);
